@@ -762,7 +762,7 @@ Alignment * fork_triplet_coffee_evaluate_output ( Alignment *IN,Constraint_list 
 	  remove (pid_tmpfile[j]);
 	}
       fprintf ( stderr, "\n");
-      IN->n_score_aln = OUT->n_score_aln = (int) score_aln;
+      IN->n_score_aln=OUT->n_score_aln=score_aln;
       IN->score_aln=OUT->score_aln=(max_aln==0)?0:((score_aln*100)/max_aln);
 
       for ( a=0; a< OUT->nseq; a++)
@@ -868,7 +868,7 @@ Alignment * nfork_triplet_coffee_evaluate_output ( Alignment *IN,Constraint_list
 	}
       fprintf ( stderr, "\n");
       
-      IN->n_score_aln = OUT->n_score_aln = (int) score_aln;
+      IN->n_score_aln=OUT->n_score_aln=score_aln;
       IN->score_aln=OUT->score_aln=(max_aln==0)?0:((score_aln*100)/max_aln);
       for ( a=0; a< OUT->nseq; a++)
 	{
@@ -1158,7 +1158,7 @@ Alignment * fast_coffee_evaluate_output ( Alignment *IN,Constraint_list *CL)
 	OUT->seq_al[IN->nseq][a]=(res==NO_COLOR_RESIDUE)?res:(MIN(res,9));
 	
 	}
-    IN->n_score_aln = OUT->n_score_aln = (int) score_aln;
+    IN->n_score_aln=OUT->n_score_aln=score_aln;
     IN->score_aln=OUT->score_aln=(max_aln==0)?0:((score_aln*100)/max_aln);
     for ( a=0; a< OUT->nseq; a++)
 	{
@@ -1265,7 +1265,7 @@ Alignment * slow_coffee_evaluate_output ( Alignment *IN,Constraint_list *CL)
 	    OUT->seq_al[IN->nseq][a]=(res==NO_COLOR_RESIDUE)?res:(MIN(res,9));
 	    }
 	}
-    IN->n_score_aln = OUT->n_score_aln = (int) score_aln;
+    IN->n_score_aln=OUT->n_score_aln=score_aln;
     IN->score_aln=OUT->score_aln=(max_score_aln==0)?0:((score_aln*100)/max_score_aln);
     for ( a=0; a< OUT->nseq; a++)
       {

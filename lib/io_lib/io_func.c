@@ -916,7 +916,8 @@ FILE_format* (*vfclose_format)         ( FILE_format *))
     
     sprintf (buf, "%s, %s (%s)\n%s\nCPU TIME:%d sec.\n%s",PROGRAM,VERSION,BUILD_INFO, AUTHOR,  (B->cpu+get_time())/1000, (S->generic_comment)?S->generic_comment:"");
     fps=print_format_string ( buf,white, ink, fps);
-    sprintf (buf, "SCORE=%d\n*\n", S->score_aln);
+    sprintf (buf, "SCORE=%d\n", S->score_aln);
+    sprintf (buf, "NSCORE=%d\n*\n", S->n_score_aln);
     fps=print_format_string ( buf,white, ink, fps);
     
    sprintf ( buf2, " BAD AVG GOOD");
@@ -1599,6 +1600,7 @@ int       output_seq_reliability_ascii     ( Alignment *B,Alignment *S, char *na
 
   fp=vfopen ( name, "w");
   fprintf ( fp, "ALN_SCORE %d\n", S->score_aln);
+  fprintf ( fp, "NALN_SCORE %d\n", S->n_score_aln);
   for ( a=0; a< S->nseq; a++)fprintf (fp, "SEQ_SCORE %*.*s %3d\n",  max_len+2,max_len,S->name[a],S->score_seq[a]);
   vfclose (fp);
   

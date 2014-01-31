@@ -762,8 +762,9 @@ Alignment * fork_triplet_coffee_evaluate_output ( Alignment *IN,Constraint_list 
 	  remove (pid_tmpfile[j]);
 	}
       fprintf ( stderr, "\n");
-      
+      print("sc1=%f\n", IN->score_aln)
       IN->score_aln=OUT->score_aln=(max_aln==0)?0:((score_aln*100)/max_aln);
+      print("sc2=%f\n", IN->score_aln)
       for ( a=0; a< OUT->nseq; a++)
 	{
 	  OUT->score_seq[a]=(max_seq[a]==0)?0:((score_seq[a]*100)/max_seq[a]);

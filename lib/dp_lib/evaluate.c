@@ -208,10 +208,10 @@ Alignment * main_coffee_evaluate_output2 ( Alignment *IN,Constraint_list *CL, co
   
   /*Make sure evaluation functions update their cache if needed*/
   IN=update_aln_random_tag (IN);
-  
+  printf("MODE %s\n", mode);
   if ( CL->evaluate_residue_pair==evaluate_matrix_score || CL->ne==0 ||strm ( mode , "categories") || strm ( mode , "matrix")|| strm(mode, "sar")|| strstr (mode, "boxshade") )
      {
-      
+      printf("MODE %s\n", mode);
        if ( strm ( mode , "categories")) return categories_evaluate_output (IN, CL);
        else if ( strm ( mode , "matrix"))return matrix_evaluate_output (IN, CL);
        else if ( strm ( mode, "sar"))return sar_evaluate_output (IN, CL);

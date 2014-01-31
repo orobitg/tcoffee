@@ -916,8 +916,7 @@ FILE_format* (*vfclose_format)         ( FILE_format *))
     
     sprintf (buf, "%s, %s (%s)\n%s\nCPU TIME:%d sec.\n%s",PROGRAM,VERSION,BUILD_INFO, AUTHOR,  (B->cpu+get_time())/1000, (S->generic_comment)?S->generic_comment:"");
     fps=print_format_string ( buf,white, ink, fps);
-    sprintf (buf, "SCORE=%d\n", S->score_aln);
-    sprintf (buf, "NSCORE=%d\n*\n", S->n_score_aln);
+    sprintf (buf, "SCORE=%d\nNSCORE=%d\n*\n", S->score_aln, S->n_score_aln);
     fps=print_format_string ( buf,white, ink, fps);
     
    sprintf ( buf2, " BAD AVG GOOD");

@@ -270,7 +270,7 @@ struct Alignment
     int *  score_seq;
     int ** score_res;
     int score_aln;
-    int n_score_aln;
+    long int n_score_aln;
     int score;
     int ibit;
     int cpu;

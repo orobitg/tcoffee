@@ -5208,7 +5208,7 @@ get_cl_param(\
 			}
 
 		      EA=main_coffee_evaluate_output(A, CL, evaluate_mode);
-                      printf("SC=%d\n", EA->n_score_aln);
+                      printf("SC=%ld\n", EA->n_score_aln);
 		      //correct ascii file
 		      if (clean_overaln)
 			{

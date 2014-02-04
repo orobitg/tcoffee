@@ -6694,7 +6694,7 @@ FILE * output_Alignment_score ( Alignment *B, FILE *fp)
    sprintf (B->name[B->nseq], "CONS");
    fprintf ( fp, "T_COFFEE ALIGNMENT\nCPU TIME:%d sec.\n", (B->cpu+get_time())/1000);
    fprintf ( fp, "SCORE=%d\n", B->score_aln);
-   fprintf ( fp, "NSCORE=%d\n", B->n_score_aln);
+   fprintf ( fp, "NSCORE=%ld\n", B->n_score_aln);
    for ( a=0;a<B->nseq; a++)fprintf ( fp, "%s: %d\n", B->name[a], B->score_seq[a]);
    fprintf ( fp, "\n");
     for (a=0; a<B->len_aln; a+=line)
@@ -7337,7 +7337,7 @@ void output_generic_clustal_aln ( char *name, Alignment *B, char *mode)
       fprintf ( fp, "CLUSTAL W (1.83) multiple sequence alignment");
     else
       {
-	fprintf (fp, "CLUSTAL FORMAT for %s %s [%s] [MODE: %s ], CPU=%.2f sec, SCORE=%d, NSCORE=%d, Nseq=%d, Len=%d ", PROGRAM, VERSION,URL, retrieve_mode (),(float)(B->cpu+get_time())/1000, B->score_aln, B->n_score_aln, B->nseq, B->len_aln);
+	fprintf (fp, "CLUSTAL FORMAT for %s %s [%s] [MODE: %s ], CPU=%.2f sec, SCORE=%d, NSCORE=%ld, Nseq=%d, Len=%d ", PROGRAM, VERSION,URL, retrieve_mode (),(float)(B->cpu+get_time())/1000, B->score_aln, B->n_score_aln, B->nseq, B->len_aln);
 	if (B->ibit>0)
 	  {
 	    float ibit=(float)log ((double)B->ibit)/log ((double)2);
